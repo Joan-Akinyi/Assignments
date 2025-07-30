@@ -21,7 +21,7 @@ while True:
 
 
 
-  if (option in [1,2,3,4,5]):
+  if (option in [1,2,3,4]):
     try:
       num1 = int(input("enter first number: "))
       num2 = int(input("enter second number: "))
@@ -31,21 +31,24 @@ while True:
 
     if(option == 1):
       result = num1 + num2
-
+      symbol = "+"
     elif(option == 2):
       result = num1 - num2
-
+      symbol = "-"
     elif(option == 3):
       result = num1 * num2
-
+      symbol = "*"
     elif(option == 4):
+      symbol = "/"
       if num2 !=0:
        result = num1 // num2
-
       else:
         result = "Error: division by zero is not allowed"
+
+    if isinstance(result, int):
+      print(f"{num1} {symbol} {num2} = {result}")
     else:
-      result = "Error: Unknown operation"
+      print(result)
     
     print("The result of the operation is {}".format(result))
   else:
